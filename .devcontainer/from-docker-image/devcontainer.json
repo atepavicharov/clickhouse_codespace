@@ -1,4 +1,4 @@
 {
-  "name": "ClickHouse",
+  "name": "ClickHouse-docker-image",
   "build": { "dockerfile": "Dockerfile" }
 }
