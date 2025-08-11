@@ -1,0 +1,4 @@
+{
+  "name": "ClickHouse-deb-packages",
+  "build": { "dockerfile": "Dockerfile" }
+}
