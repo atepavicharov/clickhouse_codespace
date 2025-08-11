@@ -1,5 +1,4 @@
 {
-  // ...
-  "build": { "dockerfile": "Dockerfile" },
-  // ...
+  "name": "ClickHouse",
+  "build": { "dockerfile": "Dockerfile" }
 }
