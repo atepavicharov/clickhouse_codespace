@@ -1,4 +1,5 @@
 {
   "name": "ClickHouse-deb-packages",
-  "build": { "dockerfile": "Dockerfile" }
+  "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "echo Welcome to ClickHouse-deb-packages"
 }
