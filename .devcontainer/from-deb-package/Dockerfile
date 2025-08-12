@@ -27,6 +27,5 @@ RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y clickhouse-server cli
 RUN sudo apt install -y nano && sudo apt install -y less && sudo apt-get install -y lsof
 
 # Copy config files before running the server
-# COPY log_level.xml config.xml /etc/clickhouse-server/config.d
-
-COPY ./users.xml /etc/clickhouse-server/users.d
+COPY clickhouse_config/log_level.xml clickhouse_config/config.xml /etc/clickhouse-server/config.d
+COPY clickhouse_config/users.xml /etc/clickhouse-server/users.d
