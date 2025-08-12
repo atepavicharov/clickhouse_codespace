@@ -24,4 +24,5 @@ RUN sudo apt-get update
 RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y clickhouse-server clickhouse-client
 
 # Install useful stuff
-RUN sudo apt install nano && apt install less && sudo apt-get install lsof
+RUN sudo apt install nano 
+# && apt install less && sudo apt-get install lsof
