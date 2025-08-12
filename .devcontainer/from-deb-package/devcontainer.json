@@ -1,5 +1,6 @@
 {
   "name": "ClickHouse-deb-packages",
   "build": { "dockerfile": "Dockerfile" },
+  "forwardPorts": [8123],
   "postCreateCommand": "echo Welcome to ClickHouse-deb-packages"
 }
