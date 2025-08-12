@@ -15,7 +15,7 @@ RUN ARCH=$(dpkg --print-architecture) \
     && echo "deb [signed-by=/usr/share/keyrings/clickhouse-keyring.gpg arch=${ARCH}] https://packages.clickhouse.com/deb stable main" | sudo tee /etc/apt/sources.list.d/clickhouse.list
 
 # Update apt package lists
-# RUN sudo apt-get update
+RUN sudo apt-get update
 
 # Install ClickHouse server and client
-# RUN sudo apt-get install -y clickhouse-server clickhouse-client
+RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y clickhouse-server clickhouse-client
