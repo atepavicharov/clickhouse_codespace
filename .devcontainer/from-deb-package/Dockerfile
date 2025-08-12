@@ -29,4 +29,4 @@ RUN sudo apt install -y nano && sudo apt install -y less && sudo apt-get install
 # Copy config files before running the server
 # COPY log_level.xml config.xml /etc/clickhouse-server/config.d
 
-# COPY users.xml /etc/clickhouse-server/users.d
+COPY ./users.xml /etc/clickhouse-server/users.d
