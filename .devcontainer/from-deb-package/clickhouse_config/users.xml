@@ -14,7 +14,7 @@
             <grants>
                 <query>GRANT db_admin</query>
             </grants>
-        <admin>
+        </admin>
     </users>
     <profiles>
         <default>
