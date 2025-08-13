@@ -37,4 +37,4 @@ COPY clickhouse_config/users.xml /etc/clickhouse-server/users.d
 
 
 # restart clickhouse server to pick new user settings
-RUN service clickhouse-server restart
+# RUN service clickhouse-server restart
