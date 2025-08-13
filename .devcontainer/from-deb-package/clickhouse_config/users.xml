@@ -15,7 +15,7 @@
             <max_memory_usage>6442450944</max_memory_usage> <!-- 6 GB. Recommended to set it about twice higher than max_bytes_before_external_group_by -->
             <join_use_nulls>1</join_use_nulls>
             <group_by_use_nulls>1</group_by_use_nulls>
-            <join_algorithm>'auto'</join_algorithm>
+            <join_algorithm>auto</join_algorithm>
             <!-- <max_bytes_in_join></max_bytes_in_join> -->
             <default_max_bytes_in_join>1073741824</default_max_bytes_in_join> <!-- 1 GB -->
         </default>
