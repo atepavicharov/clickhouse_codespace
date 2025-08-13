@@ -1,6 +1,20 @@
 <clickhouse>
+    <roles> <!-- based on https://clickhouse.com/docs/operations/settings/settings-users#roles -->
+        <db_admin>
+            <grants>
+                <query>GRANT SHOW, SELECT, INSERT, ALTER, CREATE, DROP, UNDROP TABLE, TRUNCATE, OPTIMIZE, BACKUP, KILL QUERY, KILL TRANSACTION, MOVE PARTITION BETWEEN SHARDS, ACCESS MANAGEMENT, SYSTEM, dictGet, displaySecretsInShowAndSelect, INTROSPECTION, SOURCES, CLUSTER ON *.*</query>
+                <query>GRANT ALTER NAMED COLLECTION, CREATE NAMED COLLECTION, DROP NAMED COLLECTION, SHOW NAMED COLLECTIONS, NAMED COLLECTION ON *.* WITH GRANT OPTION</query>
+            </grants>
+        </db_admin>
+    </roles>
     <users>
         <default remove="remove"></default>
+        <admin>
+            <password>admin</password>
+            <grants>
+                <query>GRANT db_admin</query>
+            </grants>
+        <admin>
     </users>
     <profiles>
         <default>
