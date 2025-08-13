@@ -11,6 +11,13 @@
             <output_format_parallel_formatting>0</output_format_parallel_formatting>
             <max_bytes_before_external_group_by>3221225472</max_bytes_before_external_group_by> <!-- 3 GB -->
             <max_bytes_before_external_sort>3221225472</max_bytes_before_external_sort> <!-- 3 GB -->
+            <!-- additional -->
+            <max_memory_usage>6,442,450,944</max_memory_usage> <!-- 6 GB. Recommended to set it about twice higher than max_bytes_before_external_group_by -->
+            <join_use_nulls>1</join_use_nulls>
+            <group_by_use_nulls>1</group_by_use_nulls>
+            <join_algorithm>'auto'</join_algorithm>
+            <!-- <max_bytes_in_join></max_bytes_in_join> -->
+            <default_max_bytes_in_join>1073741824</default_max_bytes_in_join> <!-- 1 GB -->
         </default>
     </profiles>
 </clickhouse>
