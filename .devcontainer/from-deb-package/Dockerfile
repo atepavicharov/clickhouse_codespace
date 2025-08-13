@@ -28,13 +28,13 @@ RUN sudo apt install -y nano && sudo apt install -y less && sudo apt-get install
 
 # Copy config files before running the server
 COPY clickhouse_config/log_level.xml clickhouse_config/config.xml /etc/clickhouse-server/config.d
+COPY clickhouse_config/users.xml /etc/clickhouse-server/users.d
 
 # start clickhouse server
-RUN service clickhouse-server start
+# RUN service clickhouse-server start
 # create admin user
-RUN clickhouse-client --query "CREATE USER admin IDENTIFIED WITH sha256_password BY 'admin'";
+# RUN clickhouse-client --query "CREATE USER admin IDENTIFIED WITH sha256_password BY 'admin'";
 
-COPY clickhouse_config/users.xml /etc/clickhouse-server/users.d
 
 # restart clickhouse server to pick new user settings
 RUN service clickhouse-server restart
