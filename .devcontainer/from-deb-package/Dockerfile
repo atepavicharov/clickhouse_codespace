@@ -18,10 +18,10 @@ RUN ARCH=$(dpkg --print-architecture) \
 RUN sudo apt-get update
 
 # For specific versions, install ClickHouse server and client by using:
-# RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y clickhouse-server=23.12.2.59 clickhouse-client=23.12.2.59 clickhouse-common-static=23.12.2.59
+RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y clickhouse-server=23.12.2.59 clickhouse-client=23.12.2.59 clickhouse-common-static=23.12.2.59
 
-# Install ClickHouse server and client
-RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y clickhouse-server clickhouse-client
+# Install latest stable version of ClickHouse server and client
+# RUN sudo DEBIAN_FRONTEND=noninteractive apt-get install -y clickhouse-server clickhouse-client
 
 # Install useful stuff
 RUN sudo apt install -y nano && sudo apt install -y less && sudo apt-get install -y lsof
