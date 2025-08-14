@@ -1,7 +1,7 @@
 <!-- based on https://kb.altinity.com/altinity-kb-setup-and-maintenance/altinity-kb-system-tables-eat-my-disk/ -->
 <clickhouse>
     <asynchronous_metric_log>
-        <partition_by>event_date</partition_by> <!-- CH drops whole partitions as explained in the link above -->
+        <partition_by>event_date</partition_by> <!-- This way CH will drop whole partitions as explained in the link above -->
         <ttl>event_date + INTERVAL 30 DAY DELETE</ttl>
     </asynchronous_metric_log>
     <metric_log>
