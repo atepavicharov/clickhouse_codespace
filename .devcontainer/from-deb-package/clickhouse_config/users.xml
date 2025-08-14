@@ -17,7 +17,7 @@
             <networks>
                 <ip>127.0.0.1</ip>
             </networks>
-            <access_management>1</access_management> <!-- so the user can create other users. Tbh it works without this line.-->
+            <!-- <access_management>1</access_management> --> <!-- so the user can create other users. Tbh it works without this line.-->
         </admin>
     </users>
     <profiles>
