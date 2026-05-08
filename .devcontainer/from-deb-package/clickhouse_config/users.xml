@@ -19,6 +19,12 @@
             </networks>
             <!-- <access_management>1</access_management> --> <!-- so the user can create other users. Tbh it works without this line.-->
         </admin>
+        <db_user>
+            <password from_env="CH_USER_PASSWORD"></password>
+            <grants>
+                <query>GRANT db_admin</query>
+            </grants>
+        </db_user>
     </users>
     <profiles>
         <default>
