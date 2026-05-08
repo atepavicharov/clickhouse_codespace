@@ -2,6 +2,14 @@
   "name": "ClickHouse-deb-packages",
   "build": { "dockerfile": "Dockerfile" },
   "forwardPorts": [8123],
+
+  "portsAttributes": {
+    "8123": {
+      "label": "ClickHouse HTTP",
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
+    }
+  },
   "postCreateCommand": "echo Welcome to ClickHouse-deb-packages",
   "postStartCommand": "(service clickhouse-server start || true) && /etc/clickhouse-server/users.d/init-users.sh"
 }
