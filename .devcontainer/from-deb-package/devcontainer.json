@@ -3,5 +3,5 @@
   "build": { "dockerfile": "Dockerfile" },
   "forwardPorts": [8123],
   "postCreateCommand": "echo Welcome to ClickHouse-deb-packages",
-  "postStartCommand": "(service clickhouse-server || true) start && /etc/clickhouse-server/users.d/init-users.sh"
+  "postStartCommand": "(service clickhouse-server start || true) && /etc/clickhouse-server/users.d/init-users.sh"
 }
