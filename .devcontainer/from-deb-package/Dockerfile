@@ -33,12 +33,8 @@ COPY clickhouse_config/users.xml /etc/clickhouse-server/users.d
 # start clickhouse server
 RUN service clickhouse-server start
 # create db_user user
-RUN clickhouse-client --user admin --password admin \
---multiquery \
---query "
-CREATE USER db_user IDENTIFIED BY '$(printf "%s" "$CH_USER_PASSWORD")';
-GRANT db_admin TO db_user;
-"
+RUN RUN CH_PASSWORD="$(printf \"%s\" \"$CH_USER_PASSWORD\" | sed \"s/'/''/g\")" \
+    && clickhouse-client --user admin --password admin --multiquery --query "CREATE USER db_user IDENTIFIED BY '$CH_PASSWORD'; GRANT db_admin TO db_user;"
 
 # restart clickhouse server to pick new user settings
 # RUN service clickhouse-server restart
