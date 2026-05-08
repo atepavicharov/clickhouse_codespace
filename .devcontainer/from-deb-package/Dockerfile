@@ -30,11 +30,9 @@ RUN sudo apt install -y nano && sudo apt install -y less && sudo apt-get install
 COPY clickhouse_config/log_level.xml clickhouse_config/config.xml clickhouse_config/ttl_on_system_tables.xml /etc/clickhouse-server/config.d
 COPY clickhouse_config/users.xml /etc/clickhouse-server/users.d
 
-# start clickhouse server
-RUN service clickhouse-server start
 # create db_user user
-# RUN RUN CH_PASSWORD="$(printf \"%s\" \"$CH_USER_PASSWORD\" | sed \"s/'/''/g\")" \
-#     && clickhouse-client --user admin --password admin --multiquery --query "CREATE USER db_user IDENTIFIED BY '$CH_PASSWORD'; GRANT db_admin TO db_user;"
+COPY clickhouse_config/init-users.sh /tmp/init-users.sh
+RUN chmod +x /tmp/init-users.sh
 
 # restart clickhouse server to pick new user settings
 # RUN service clickhouse-server restart
