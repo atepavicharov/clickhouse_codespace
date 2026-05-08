@@ -31,8 +31,8 @@ COPY clickhouse_config/log_level.xml clickhouse_config/config.xml clickhouse_con
 COPY clickhouse_config/users.xml /etc/clickhouse-server/users.d
 
 # create db_user user
-COPY clickhouse_config/init-users.sh /tmp/init-users.sh
-RUN chmod +x /tmp/init-users.sh
+COPY clickhouse_config/init-users.sh /etc/clickhouse-server/users.d/init-users.sh
+RUN chmod 777 /etc/clickhouse-server/users.d/init-users.sh
 
 # restart clickhouse server to pick new user settings
 # RUN service clickhouse-server restart
