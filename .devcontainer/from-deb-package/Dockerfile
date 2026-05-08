@@ -30,11 +30,9 @@ RUN sudo apt install -y nano && sudo apt install -y less && sudo apt-get install
 COPY clickhouse_config/log_level.xml clickhouse_config/config.xml clickhouse_config/ttl_on_system_tables.xml /etc/clickhouse-server/config.d
 COPY clickhouse_config/users.xml /etc/clickhouse-server/users.d
 
-# start clickhouse server
-# RUN service clickhouse-server start
-# create admin user
-# RUN clickhouse-client --query "CREATE USER admin IDENTIFIED WITH sha256_password BY 'admin'";
-
+# create db_user user
+COPY clickhouse_config/init-users.sh /etc/clickhouse-server/users.d/init-users.sh
+RUN chmod 777 /etc/clickhouse-server/users.d/init-users.sh
 
 # restart clickhouse server to pick new user settings
 # RUN service clickhouse-server restart
